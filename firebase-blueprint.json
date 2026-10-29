@@ -1,0 +1,343 @@
+{
+  "entities": {
+    "Profile": {
+      "title": "Profile",
+      "description": "Personal profile and biographical information for Riya Singh",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Full name of the developer",
+          "maxLength": 100
+        },
+        "role": {
+          "type": "string",
+          "description": "Professional title or role",
+          "maxLength": 150
+        },
+        "location": {
+          "type": "string",
+          "description": "Current location",
+          "maxLength": 150
+        },
+        "intro": {
+          "type": "string",
+          "description": "Short introductory tagline",
+          "maxLength": 500
+        },
+        "about": {
+          "type": "string",
+          "description": "Detailed biography and interest summary",
+          "maxLength": 2000
+        },
+        "email": {
+          "type": "string",
+          "description": "Primary public contact email",
+          "maxLength": 150
+        },
+        "linkedin": {
+          "type": "string",
+          "description": "LinkedIn profile URL",
+          "maxLength": 255
+        },
+        "github": {
+          "type": "string",
+          "description": "GitHub profile URL",
+          "maxLength": 255
+        },
+        "resumeUrl": {
+          "type": "string",
+          "description": "Link to downloadable resume or PDF file",
+          "maxLength": 500
+        },
+        "openToWork": {
+          "type": "boolean",
+          "description": "Status flag showing availability for roles"
+        },
+        "openToWorkText": {
+          "type": "string",
+          "description": "Headline text describing work interests",
+          "maxLength": 300
+        },
+        "published": {
+          "type": "boolean",
+          "description": "Publication status"
+        },
+        "updatedAt": {
+          "type": "string",
+          "description": "ISO timestamp of last update"
+        }
+      },
+      "required": ["name", "role", "email"]
+    },
+    "SkillGroup": {
+      "title": "SkillGroup",
+      "description": "Categorized skill set such as Web Development or Programming",
+      "type": "object",
+      "properties": {
+        "category": {
+          "type": "string",
+          "description": "Category name for the skills",
+          "maxLength": 100
+        },
+        "skills": {
+          "type": "array",
+          "description": "List of skill item names",
+          "items": {
+            "type": "string"
+          }
+        },
+        "order": {
+          "type": "number",
+          "description": "Display order index"
+        },
+        "published": {
+          "type": "boolean",
+          "description": "Publication visibility status"
+        }
+      },
+      "required": ["category", "skills", "order", "published"]
+    },
+    "Project": {
+      "title": "Project",
+      "description": "Software project or academic application",
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Title of the project",
+          "maxLength": 150
+        },
+        "category": {
+          "type": "string",
+          "description": "Project category (e.g. Academic Project, Mini Project)",
+          "maxLength": 100
+        },
+        "technologies": {
+          "type": "array",
+          "description": "Array of technology tags used",
+          "items": {
+            "type": "string"
+          }
+        },
+        "description": {
+          "type": "string",
+          "description": "Detailed project description",
+          "maxLength": 2000
+        },
+        "imageUrl": {
+          "type": "string",
+          "description": "Project preview image URL or data URI",
+          "maxLength": 100000
+        },
+        "githubUrl": {
+          "type": "string",
+          "description": "Link to GitHub repository",
+          "maxLength": 500
+        },
+        "liveUrl": {
+          "type": "string",
+          "description": "Link to live demo deployment",
+          "maxLength": 500
+        },
+        "isFeatured": {
+          "type": "boolean",
+          "description": "Whether the project is featured on the hero / top section"
+        },
+        "order": {
+          "type": "number",
+          "description": "Display sort order"
+        },
+        "published": {
+          "type": "boolean",
+          "description": "Publication status"
+        }
+      },
+      "required": ["title", "category", "technologies", "description", "published"]
+    },
+    "Education": {
+      "title": "Education",
+      "description": "Academic qualification or degree",
+      "type": "object",
+      "properties": {
+        "degree": {
+          "type": "string",
+          "description": "Degree or program title",
+          "maxLength": 200
+        },
+        "institution": {
+          "type": "string",
+          "description": "School, college, or institute name",
+          "maxLength": 250
+        },
+        "period": {
+          "type": "string",
+          "description": "Years or session attended",
+          "maxLength": 50
+        },
+        "score": {
+          "type": "string",
+          "description": "Grade, percentage, or status",
+          "maxLength": 50
+        },
+        "order": {
+          "type": "number",
+          "description": "Display order"
+        },
+        "published": {
+          "type": "boolean",
+          "description": "Publication status"
+        }
+      },
+      "required": ["degree", "institution", "period", "published"]
+    },
+    "Training": {
+      "title": "Training",
+      "description": "Practical industrial or technical training",
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Training title (e.g. Summer Training, Technical Training)",
+          "maxLength": 200
+        },
+        "organization": {
+          "type": "string",
+          "description": "Company or training provider name",
+          "maxLength": 250
+        },
+        "location": {
+          "type": "string",
+          "description": "City or location",
+          "maxLength": 150
+        },
+        "topic": {
+          "type": "string",
+          "description": "Core subject covered (e.g. Java with JSP)",
+          "maxLength": 200
+        },
+        "duration": {
+          "type": "string",
+          "description": "Training duration (e.g. 28 days, 45 days)",
+          "maxLength": 100
+        },
+        "year": {
+          "type": "string",
+          "description": "Academic year or period (e.g. First Year, Second Year)",
+          "maxLength": 100
+        },
+        "order": {
+          "type": "number",
+          "description": "Display order"
+        },
+        "published": {
+          "type": "boolean",
+          "description": "Publication status"
+        }
+      },
+      "required": ["title", "organization", "topic", "published"]
+    },
+    "Certification": {
+      "title": "Certification",
+      "description": "Course or certificate completed",
+      "type": "object",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Certificate title",
+          "maxLength": 250
+        },
+        "issuer": {
+          "type": "string",
+          "description": "Issuing organization or platform",
+          "maxLength": 200
+        },
+        "details": {
+          "type": "string",
+          "description": "Duration or details (e.g. 36 hours, final exam passed)",
+          "maxLength": 200
+        },
+        "credentialUrl": {
+          "type": "string",
+          "description": "Optional verification or certificate link",
+          "maxLength": 500
+        },
+        "order": {
+          "type": "number",
+          "description": "Display order"
+        },
+        "published": {
+          "type": "boolean",
+          "description": "Publication status"
+        }
+      },
+      "required": ["title", "issuer", "published"]
+    },
+    "ContactMessage": {
+      "title": "ContactMessage",
+      "description": "Contact message inquiry sent by visitors",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Sender name",
+          "maxLength": 100
+        },
+        "email": {
+          "type": "string",
+          "description": "Sender contact email",
+          "maxLength": 150
+        },
+        "subject": {
+          "type": "string",
+          "description": "Message subject",
+          "maxLength": 200
+        },
+        "message": {
+          "type": "string",
+          "description": "Message text content",
+          "maxLength": 3000
+        },
+        "createdAt": {
+          "type": "string",
+          "description": "Timestamp ISO"
+        },
+        "read": {
+          "type": "boolean",
+          "description": "Read flag for admin"
+        }
+      },
+      "required": ["name", "email", "message"]
+    }
+  },
+  "firestore": {
+    "/profile/{profileId}": {
+      "schema": "Profile",
+      "description": "Profile information for the portfolio owner"
+    },
+    "/skills/{skillId}": {
+      "schema": "SkillGroup",
+      "description": "Skill categories and items"
+    },
+    "/projects/{projectId}": {
+      "schema": "Project",
+      "description": "Portfolio projects showcase"
+    },
+    "/education/{educationId}": {
+      "schema": "Education",
+      "description": "Educational credentials and history"
+    },
+    "/trainings/{trainingId}": {
+      "schema": "Training",
+      "description": "Industrial and technical trainings"
+    },
+    "/certifications/{certificationId}": {
+      "schema": "Certification",
+      "description": "Certifications and courses"
+    },
+    "/messages/{messageId}": {
+      "schema": "ContactMessage",
+      "description": "Inquiries and messages from the contact form"
+    }
+  }
+}
